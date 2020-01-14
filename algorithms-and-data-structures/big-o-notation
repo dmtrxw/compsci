@@ -33,7 +33,7 @@ There are some important and deliberately chosen words in that sentence:
   algorithm to do arithmetic multiplication to an algorithm that sorts a list
   of integers. But comparison of two algorithms to do arithmetic operations
   (one multiplication, one addition) will tell you something meaningful;
-- representation: Big O (in its simples form) reduces the comparison between
+- representation: Big O (in its simplest form) reduces the comparison between
   algorithms to a single variable. That variable is chosen based on
   observations or assumptions. For example, sorting algorithms are typically
   compared based on comparison operations (comparing two nodes to determine
