@@ -1,0 +1,104 @@
+Big O Notation
+
+In Layman's terms
+
+Say you order Harry Potter: Complete 8-Film Collection [Blu-ray] from Amazon
+and download the same film collection online at the same time. You want to test
+which method is faster. The delivery takes almost a day to arrive and the
+download completed about 30 minutes earlier. Great! So it's a tight race.
+
+What if I order several Blu-ray movies and download all the movies online at
+the same time? This time, the delivery still take a day to complete, but the
+online download takes 3 days to finish.
+
+For online shopping, the number of purchased item (input) doesn't affect the
+delivery time. The output is constant. We call this O(1).
+
+For online downloading, the download time is directly proportional to the movie
+file sizes (input). We call this O(n).
+
+From the experiments, we know that online shopping scales better than online
+downloading. It is very important to understand big O notation because it helps
+you to analyze the scalability and efficiency of algorithms.
+
+Note: Big O notation represents the worst-case scenario of an algorithm. Let's
+assume that O(1) and O(n) are the worst-case scenarios of the example above.
+
+--------------------------------------------------------------------------------
+
+Big O notation is a relative representation of the complexity of an algorithm.
+
+There are some important and deliberately chosen words in that sentence:
+- relative: you can only compare apples to apples. You can't compare an
+  algorithm to do arithmetic multiplication to an algorithm that sorts a list
+  of integers. But comparison of two algorithms to do arithmetic operations
+  (one multiplication, one addition) will tell you something meaningful;
+- representation: Big O (in its simples form) reduces the comparison between
+  algorithms to a single variable. That variable is chosen based on
+  observations or assumptions. For example, sorting algorithms are typically
+  compared based on comparison operations (comparing two nodes to determine
+  their relative ordering). This assumes that comparison is expensive. But what
+  if comparison is cheap but swapping is expensive? It changes the comparison;
+  and
+- complexity: if it takes me one second to sort 10,000 elements, how long will
+  it take me to sort one million? Complexity in this instance is a relative
+  measure to something else.
+
+The basic arithmetic operations we learnt in school were:
+- addition;
+- subtraction;
+- multiplication; and
+- division.
+
+Each of these is an operation or a problem. A method of solving these is called
+an algorithm.
+
+Addition is the simplest. You line the numbers up (to the right) and add the
+digits in a column writing the last number of that addition in the result. The
+'tens' part of that number is carried over to the next column.
+
+Let's assume that the addition of these numbers is the most expensive operation
+in this algorithm. It stands to reason that to add these two numbers together
+we have to add together 6 digits (and possibly carry a 7th). If we add two 100
+digit numbers together we have to do 100 additions. If we add two 10,000 digit
+numbers we have to do 10,000 additions.
+
+The complexity (being the number of operations) is directly proportional to the
+number of digits n in the larger number. We call this O(n) or linear
+complexity.
+
+Subtraction is similar (except you may need to borrow instead of carry).
+
+Multiplication is different. You line the numbers up, take the first digit in
+the bottom number and multiply it in turn against each digit in the top number
+andn so on through each digit. So to multiply our two 6 digit numbers we must
+do 36 multiplications. We may need to do as many as 10 or 11 column adds to get
+the end result too.
+
+If we have two 100-digit numbers we need to do 10,000 multiplications and 200
+adds. For two one million digit numbers we need to do one trillion (10^12)
+
+As the algorithm scales with n-squared, this is O(n^2) or quadratic complexity.
+
+We only care about the most significant portion of complexity.
+
+The astute may have realized that we could express the number of operations as:
+n^2 + 2n. But as you saw from our example with two numbers of a million digits
+apiece, the second term (2n) becomes insignificant (accounting for 0.0002% of
+the total operations by that stage).
+
+One can notice that we've assumed the worst case scenario here. While
+multiplying 6 digit numbers, if one of them has 4 digits and the other one has
+6 digits, then we only have 24 multiplications. Still, we calculate the worst
+case scenario for that 'n', i.e when both are 6 digit numbers. Hence Big O
+notation is about the Worst-case scenario of an algorithm.
+
+--------------------------------------------------------------------------------
+
+Another examples?
+
+...
+
+References:
+- http://carlcheo.com/compsci
+- https://stackoverflow.com/a/487278/5865992
